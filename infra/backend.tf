@@ -1,17 +1,11 @@
 terraform {
   backend "azurerm" {
     # These values should be configured via environment variables or command line when initializing
-    # resource_group_name  = "tfstate-rg"
-    # storage_account_name = "tfstate<unique_suffix>"
-    # container_name       = "tfstate"
-    # key                  = "terraform.tfstate"
-    # use_azuread_auth     = true
+    use_azuread_auth     = true
+    resource_group_name  = "tfstate-day04"  # Can be passed via `-backend-config=`"resource_group_name=<resource group name>"` in the `init` command.
+    storage_account_name = "day0414730"                      # Can be passed via `-backend-config=`"storage_account_name=<storage account name>"` in the `init` command.
+    container_name       = "tfstate"                       # Can be passed via `-backend-config=`"container_name=<container name>"` in the `init` command.
+    key                  = "terraform.tfstate"        # Can be passed via `-backend-config=`"key=<blob key name>"` in the `init` command.
   }
 }
 
-# Note: This is a template. Actual values should be provided via backend-config or environment variables.
-# Example initialization:
-# terraform init -backend-config="resource_group_name=tfstate-rg" \
-#                -backend-config="storage_account_name=tfstate12345" \
-#                -backend-config="container_name=tfstate" \
-#                -backend-config="key=prod.terraform.tfstate"
