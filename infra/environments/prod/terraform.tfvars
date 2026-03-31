@@ -2,7 +2,7 @@
 
 # General settings
 environment         = "prod"
-location            = "canadacentral"
+location            = "centralindia"
 secondary_location  = "canadaeast"
 resource_group_name = "three-tier-app"
 

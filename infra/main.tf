@@ -33,6 +33,8 @@ module "networking" {
   bastion_subnet_prefix    = var.bastion_subnet_prefix
   appgw_subnet_prefix      = var.appgw_subnet_prefix
   tags                     = local.common_tags
+
+  depends_on = [azurerm_resource_group.main]
 }
 
 # Key Vault
