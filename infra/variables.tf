@@ -4,16 +4,28 @@ variable "environment" {
   default     = "prod"
 }
 
+
+
 variable "location" {
   description = "Azure region for resources"
   type        = string
-  default     = "eastus3"
+  default     = "centralindia"   # was "eastus3" — invalid region
+
+  validation {
+    condition = contains([
+      "eastus", "eastus2", "centralus", "westus", "westus2",
+      "westus3", "northcentralus", "southcentralus",
+      "canadacentral", "canadaeast", "uksouth", "ukwest",
+      "westeurope", "northeurope","centralindia", "southindia", "westindia",
+    ], var.location)
+    error_message = "Must be a valid Azure region."
+  }
 }
 
 variable "secondary_location" {
   description = "Secondary Azure region for disaster recovery"
   type        = string
-  default     = "centralus"
+  default     = "southindia"
 }
 
 variable "resource_group_name" {

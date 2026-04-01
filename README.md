@@ -368,3 +368,6 @@ Please follow the standard Git workflow:
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+
+terraform apply -var-file="environments/prod/terraform.tfvars" -var="dockerhub_username=jpatel6625" -var="dockerhub_password=Jinal@1967" -var="frontend_image=jpatel6625/frontend:latest" -var="backend_image=jpatel6625/backend:latest"
