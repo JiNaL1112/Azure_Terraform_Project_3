@@ -2,8 +2,8 @@
 
 # General settings
 environment         = "prod"
-location            = "centralindia"
-secondary_location  = "canadaeast"
+location            = "centralus"
+secondary_location  = "northcentralus"
 resource_group_name = "three-tier-app"
 
 # Network settings
@@ -15,15 +15,14 @@ bastion_subnet_prefix    = "10.0.7.0/24"
 appgw_subnet_prefix      = "10.0.8.0/24"
 
 # Compute settings
-frontend_vm_size   = "Standard_D2s_v3"
-backend_vm_size    = "Standard_D2s_v3"
-frontend_instances = 2
-backend_instances  = 2
+frontend_vm_size   = "Standard_B1s"
+backend_vm_size    = "Standard_B1s"
+frontend_instances = 1
+backend_instances  = 1
 admin_username     = "adminuser"
 
 # Database settings
-postgres_sku_name   = "GP_Standard_D2s_v3"
-postgres_version    = "14"
+postgres_sku_name   = "B_Standard_B1ms"
 postgres_storage_mb = 32768
 postgres_db_name    = "goalsdb"
 postgres_db_port    = 5432

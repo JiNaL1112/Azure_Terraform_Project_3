@@ -75,13 +75,13 @@ variable "appgw_subnet_prefix" {
 variable "frontend_vm_size" {
   description = "VM size for frontend instances"
   type        = string
-  default     = "Standard_B2s"
+  default     = "Standard_B1s"
 }
 
 variable "backend_vm_size" {
   description = "VM size for backend instances"
   type        = string
-  default     = "Standard_B2s"
+  default     = "Standard_B1s"
 }
 
 variable "frontend_instances" {
@@ -112,7 +112,7 @@ variable "deploy_compute" {
 variable "postgres_sku_name" {
   description = "SKU name for PostgreSQL Flexible Server"
   type        = string
-  default     = "GP_Standard_D2s_v3"
+  default     = "B_Standard_B1ms"
 }
 
 variable "postgres_version" {

@@ -10,6 +10,11 @@ resource "random_string" "suffix" {
   length  = 6
   special = false
   upper   = false
+
+  keepers = {
+    resource_group = var.resource_group_name
+    environment    = var.environment
+  }
 }
 
 # Resource Group

@@ -23,6 +23,8 @@ resource "azurerm_subnet" "public" {
   virtual_network_name = azurerm_virtual_network.main.name
   address_prefixes     = [var.public_subnet_prefixes[count.index]]
   service_endpoints    = ["Microsoft.Storage", "Microsoft.KeyVault", "Microsoft.ContainerRegistry"]
+
+  depends_on = [azurerm_virtual_network.main]
 }
 
 # Private Subnets (Backend)
@@ -33,6 +35,8 @@ resource "azurerm_subnet" "private" {
   virtual_network_name = azurerm_virtual_network.main.name
   address_prefixes     = [var.private_subnet_prefixes[count.index]]
   service_endpoints    = ["Microsoft.Storage", "Microsoft.KeyVault", "Microsoft.ContainerRegistry"]
+
+  depends_on = [azurerm_virtual_network.main]  
 }
 
 # Database Subnets
@@ -44,6 +48,8 @@ resource "azurerm_subnet" "database" {
   address_prefixes     = [var.database_subnet_prefixes[count.index]]
   service_endpoints    = ["Microsoft.Storage", "Microsoft.SQL"]
 
+  depends_on = [azurerm_virtual_network.main] 
+
   # Required delegation for PostgreSQL Flexible Server VNet integration
   delegation {
     name = "fs"
@@ -54,6 +60,7 @@ resource "azurerm_subnet" "database" {
       ]
     }
   }
+
 }
 
 # Bastion Subnet
@@ -62,6 +69,8 @@ resource "azurerm_subnet" "bastion" {
   resource_group_name  = var.resource_group_name
   virtual_network_name = azurerm_virtual_network.main.name
   address_prefixes     = [var.bastion_subnet_prefix]
+
+  depends_on = [azurerm_virtual_network.main]  
 }
 
 # Application Gateway Subnet
@@ -70,6 +79,8 @@ resource "azurerm_subnet" "appgw" {
   resource_group_name  = var.resource_group_name
   virtual_network_name = azurerm_virtual_network.main.name
   address_prefixes     = [var.appgw_subnet_prefix]
+
+  depends_on = [azurerm_virtual_network.main]  
 }
 
 # Public Subnet NSG
