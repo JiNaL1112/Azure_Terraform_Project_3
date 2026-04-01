@@ -48,7 +48,8 @@ resource "azurerm_subnet" "database" {
   address_prefixes     = [var.database_subnet_prefixes[count.index]]
   service_endpoints    = ["Microsoft.Storage", "Microsoft.SQL"]
 
-  depends_on = [azurerm_virtual_network.main] 
+  depends_on = [azurerm_virtual_network.main , azurerm_subnet.public ] 
+  
 
   # Required delegation for PostgreSQL Flexible Server VNet integration
   delegation {

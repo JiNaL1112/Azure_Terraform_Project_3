@@ -13,20 +13,20 @@ output "server_fqdn" {
   value       = azurerm_postgresql_flexible_server.primary.fqdn
 }
 
-output "replica_id" {
-  description = "ID of the read replica PostgreSQL server"
-  value       = azurerm_postgresql_flexible_server.replica.id
-}
+# output "replica_id" {
+#   description = "ID of the read replica PostgreSQL server"
+#   value       = azurerm_postgresql_flexible_server.replica.id
+# }
 
-output "replica_name" {
-  description = "Name of the read replica PostgreSQL server"
-  value       = azurerm_postgresql_flexible_server.replica.name
-}
+# output "replica_name" {
+#   description = "Name of the read replica PostgreSQL server"
+#   value       = azurerm_postgresql_flexible_server.replica.name
+# }
 
-output "replica_fqdn" {
-  description = "FQDN of the read replica PostgreSQL server"
-  value       = azurerm_postgresql_flexible_server.replica.fqdn
-}
+# output "replica_fqdn" {
+#   description = "FQDN of the read replica PostgreSQL server"
+#   value       = azurerm_postgresql_flexible_server.replica.fqdn
+# }
 
 output "administrator_login" {
   description = "Administrator username for PostgreSQL"

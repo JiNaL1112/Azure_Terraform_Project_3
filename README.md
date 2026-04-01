@@ -371,3 +371,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 
 terraform apply -var-file="environments/prod/terraform.tfvars" -var="dockerhub_username=jpatel6625" -var="dockerhub_password=Jinal@1967" -var="frontend_image=jpatel6625/frontend:latest" -var="backend_image=jpatel6625/backend:latest"
+
+
+terraform import -var-file="environments/prod/terraform.tfvars" -var="dockerhub_username=jpatel6625" -var="dockerhub_password=Jinal@1967" -var="frontend_image=jpatel6625/frontend:latest" -var="backend_image=jpatel6625/backend:latest" 'module.backend[0].azurerm_lb_probe.backend[0]' '/subscriptions/36353bfb-a539-4f8d-b17e-046f127e36e1/resourceGroups/three-tier-app-prod/providers/Microsoft.Network/loadBalancers/prod-cdsg1e-backend-lb/probes/prod-cdsg1e-backend-probe'

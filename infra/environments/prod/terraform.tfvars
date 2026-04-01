@@ -2,8 +2,10 @@
 
 # General settings
 environment         = "prod"
-location            = "centralus"
-secondary_location  = "northcentralus"
+//location            = "centralus"
+//secondary_location  = "northcentralus"
+location           = "centralindia"
+secondary_location = "southindia"
 resource_group_name = "three-tier-app"
 
 # Network settings
@@ -23,6 +25,7 @@ admin_username     = "adminuser"
 
 # Database settings
 postgres_sku_name   = "B_Standard_B1ms"
+//postgres_sku_name = "GP_Standard_D2s_v3"  # General Purpose — supports ZoneRedundant HA
 postgres_storage_mb = 32768
 postgres_db_name    = "goalsdb"
 postgres_db_port    = 5432

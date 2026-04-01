@@ -38,10 +38,10 @@ output "postgres_server_fqdn" {
   value       = module.database.server_fqdn
 }
 
-output "postgres_replica_name" {
-  description = "The name of the PostgreSQL replica server"
-  value       = module.database.replica_name
-}
+# output "postgres_replica_name" {
+#   description = "The name of the PostgreSQL replica server"
+#   value       = module.database.replica_name
+# }
 
 output "postgres_admin_username" {
   description = "The administrator username of the PostgreSQL server"
