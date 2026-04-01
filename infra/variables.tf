@@ -75,13 +75,13 @@ variable "appgw_subnet_prefix" {
 variable "frontend_vm_size" {
   description = "VM size for frontend instances"
   type        = string
-  default     = "Standard_B1s"
+  default     = "Standard_D2s_v3"
 }
 
 variable "backend_vm_size" {
   description = "VM size for backend instances"
   type        = string
-  default     = "Standard_B1s"
+  default     = "Standard_D2s_v3"
 }
 
 variable "frontend_instances" {
